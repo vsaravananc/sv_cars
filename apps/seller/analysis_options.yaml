@@ -1,0 +1,19 @@
+analyzer:
+  errors:
+    inference_failure_on_function_invocation: ignore
+    inference_failure_on_instance_creation: ignore
+    public_member_api_docs: ignore
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
+include: package:very_good_analysis/analysis_options.6.0.0.yaml
+
+linter:
+  rules:
+    omit_local_variable_types: false
+    constant_identifier_names: true

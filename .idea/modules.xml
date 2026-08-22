@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+<module fileurl="file://$PROJECT_DIR$/apps/backend/melos_backend.iml" filepath="$PROJECT_DIR$/apps/backend/melos_backend.iml"/>
+<module fileurl="file://$PROJECT_DIR$/apps/customer/melos_customer.iml" filepath="$PROJECT_DIR$/apps/customer/melos_customer.iml"/>
+<module fileurl="file://$PROJECT_DIR$/apps/seller/melos_seller.iml" filepath="$PROJECT_DIR$/apps/seller/melos_seller.iml"/>
+<module fileurl="file://$PROJECT_DIR$/melos_car_catlog.iml" filepath="$PROJECT_DIR$/melos_car_catlog.iml"/>
+    </modules>
+  </component>
+</project>

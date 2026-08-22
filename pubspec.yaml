@@ -1,0 +1,19 @@
+name: car_catlog
+publish_to: none
+environment:
+  sdk: ^3.11.0
+workspace:
+  - apps/backend
+  - apps/customer
+  - apps/seller
+dev_dependencies:
+  melos: ^7.6.0
+
+melos:
+  scripts:
+    backend:
+      run: cd apps/backend && dart_frog dev
+    customer:
+      run: cd apps/customer && flutter run
+    seller:
+      run: cd apps/seller && flutter run
