@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:seller/core/extension/context_extendsion.dart';
+import 'package:seller/feature/whitelist/presentation/bloc/image_bloc/bloc/image_bloc.dart';
 import 'package:seller/feature/whitelist/presentation/widgets/set_of_image_widget.dart';
 
-class AddNewCar extends StatelessWidget {
+class AddNewCar extends StatefulWidget {
   const AddNewCar({super.key});
 
+  @override
+  State<AddNewCar> createState() => _AddNewCarState();
+}
+
+class _AddNewCarState extends State<AddNewCar> {
+  @override
+  void initState() {
+    context.read<ImageBloc>().add(ResetImageEvent());
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

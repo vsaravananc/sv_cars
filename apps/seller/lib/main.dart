@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:seller/core/extension/context_extendsion.dart';
 import 'package:seller/core/routes/routes.dart';
 import 'package:seller/core/util/assets.dart';
 import 'package:seller/core/util/dp_inject.dart';
+import 'package:seller/feature/whitelist/presentation/bloc/image_bloc/bloc/image_bloc.dart';
 import 'package:seller/theme/light_theme.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -17,15 +19,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Seller',
-      themeMode: .light,
-      builder: (context, child) {
-        return MediaQuery.withNoTextScaling(child: child!);
-      },
-      theme:lightThemeData,
-      routerConfig: Routes.routes,
+    return MultiBlocProvider(
+      providers: [BlocProvider(create: (context) => getIt<ImageBloc>())],
+      child: MaterialApp.router(
+        title: 'Seller',
+        themeMode: .light,
+        builder: (context, child) {
+          return MediaQuery.withNoTextScaling(child: child!);
+        },
+        theme: lightThemeData,
+        routerConfig: Routes.routes,
+      ),
     );
+  
   }
 }
 
